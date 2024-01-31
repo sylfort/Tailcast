@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { InvitationModal } from "./InvitationModal";
+import { NasaAPI } from "./NasaAPI";
+
+// import { InvitationModal } from "./InvitationModal";
 import dashboard from "../assets/images/dashboard.jpg";
 
 export const Hero = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section
@@ -28,11 +30,11 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.05 }}
         >
           <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-wide  text-white  px-8 sm:px-8 md:px-20 lg:px-4">
-            <span className="inline md:hidden">Analytics</span>
-            <span className="hidden md:inline">Analytic tools suite</span>
+            {/* <span className="inline md:hidden">Analytics</span> */}
+            <span className="hidden md:inline">Capture Your Milestones</span>
           </div>
           <div className="mt-2 sm:mt-2 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-wide  text-white  px-8 sm:px-20 md:px-24 lg:px-24">
-            for developers
+          with the Cosmos
           </div>
         </motion.div>
         <motion.div
@@ -41,8 +43,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className="text-customGrayText text-sm lg:text-base xl:text-lg sm:text-base mt-10 px-12 sm:px-48 ">
-            Experience seamless business integrations and powerful insights with
-            our cutting-edge analytic tools.
+            Unveil the most beautiful picture from space on Your Most Memorable Days
           </div>
         </motion.div>
         <motion.div
@@ -53,15 +54,15 @@ export const Hero = () => {
           <div className="flex flex-col gap-2 sm:flex-row mt-14 mb-24 sm:mb-40 justify-center">
             <div
               className="custom-button-colored w-64 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0"
-              onClick={() => setIsModalOpen(true)}
+
             >
-              Get Started
+              Search Image
             </div>
             <div
               className="w-64 sm:w-52 h-12 rounded-xl font-bold text-white border border-solid  flex justify-center items-center cursor-pointer bg-customDarkBg2 hover:bg-customDarkBg3 border-customPrimary transition"
-              onClick={() => setIsModalOpen(true)}
+
             >
-              Live demo
+              Email who matters to you
             </div>
           </div>
         </motion.div>
@@ -70,15 +71,16 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0, zIndex: 20 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
+        <NasaAPI />
           <div className="relative w-screen flex justify-center ">
-            <img
-              src={dashboard}
+            {/* {<img
+              src={}
               alt="123"
               className="w-4/5 2xl:w-[1200px] mx-auto absolute z-10 rounded-xl custom-border-gray hero-dashboard-border-gradient lg:top-6 xl:top-0"
-            />
+            />} */}
           </div>
         </motion.div>
-        <div className="relative w-screen flex justify-center ">
+        {/* <div className="relative w-screen flex justify-center ">
           <div className="custom-shape-divider-bottom-1665343298 mt-4 sm:mt-16 md:mt-52 hidden lg:block">
             <svg
               data-name="Layer 1"
@@ -93,11 +95,11 @@ export const Hero = () => {
               ></path>
             </svg>
           </div>
-        </div>
+        </div> */}
       </div>
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <InvitationModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
-      )}
+      )} */}
     </section>
   );
 };
